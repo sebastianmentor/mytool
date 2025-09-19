@@ -1,4 +1,3 @@
-import sys
 from mytool.cli import parse_args
 
 
