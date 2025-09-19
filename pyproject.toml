@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "mytool"
+version = "0.1.0"
+description = "Exempelpå ett CLI-verktyg med argparse och logging"
+readme = "README.md"
+authors = [{ name = "Ditt Namn" }]
+requires-python = ">=3.8"
+license = { text = "MIT" }
+keywords = ["cli", "argparse", "example"]
+
+
+# Inga obligatoriska beroenden behövs för exemplen.
+dependencies = []
+
+
+# Utvecklingsberoenden (installera via: `pip install -e .[dev]`)
+[project.optional-dependencies]
+dev = [
+"pytest>=7",
+"pytest-cov>=4",
+"ruff>=0.4",
+]
+
+
+[project.scripts]
+# Skapar ett konsolkommando `mytool`
+mytool = "mytool.cli:main"
+
+
+[tool.hatch.build]
+packages = ["src/mytool"]
